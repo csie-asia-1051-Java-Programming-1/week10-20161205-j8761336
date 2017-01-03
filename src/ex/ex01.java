@@ -11,6 +11,32 @@ public class ex01 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scn =new Scanner(System.in);
-	}
+		String a =scn.nextLine();
+		int y[]=new int[10];
+		int a1[]=new int[10];
+		int a2[]=new int[10];
+		for(int i=0;i<10;i++){
+			if(a.charAt(i)=='X'){
+				y[i]=10;
+			}
+			else{y[i]=a.charAt(i)-48;}
+//			System.out.print(y[i]+" ");
+		}
+		y[0]=a1[0]=a2[0];
+		for(int i=1;i<10;i++){
+			a1[i]=a1[i-1]+y[i];
+//			System.out.print(a1[i]+" ");
+		}
+		for(int i=1;i<10;i++){
+			a2[i]=a2[i-1]+a1[i];
+//			System.out.print(a2[i]+" ");
+		}
+		if(a2[9]%11==0){
+			System.out.println("合法");
+		}
+		else{
+			System.out.println("不合法");
+		}
+		}
 
 }
